@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Study Planner - B.Tech Project</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <h1>📚 Smart Study Planner</h1>
+        <div class="header-controls">
+            <button id="theme-toggle" class="btn-icon">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </header>
+
+    <main>
+        <!-- Timer Section -->
+        <section class="card timer-section">
+            <div class="timer-display" id="timer-display">00:00:00</div>
+            <div class="timer-controls">
+                <select id="subject-select" class="subject-select">
+                    <option value="">Select Subject</option>
+                </select>
+                <button id="start-timer" class="btn-success">Start</button>
+                <button id="pause-timer" class="btn-warning">Pause</button>
+                <button id="stop-timer" class="btn-danger">Stop</button>
+            </div>
+        </section>
+
+        <!-- Dashboard -->
+        <div class="dashboard">
+            <!-- Subjects Panel -->
+            <section class="card subjects-panel">
+                <div class="panel-header">
+                    <h2>My Subjects</h2>
+                    <button id="add-subject-btn" class="btn-primary">
+                        <i class="fas fa-plus"></i> Add
+                    </button>
+                </div>
+                <div id="subjects-list" class="subjects-list"></div>
+            </section>
+
+            <!-- Recent Sessions -->
+            <section class="card sessions-panel">
+                <h2>Recent Sessions</h2>
+                <div id="sessions-list" class="sessions-list"></div>
+            </section>
+        </div>
+
+        <!-- Analytics -->
+        <section class="card analytics">
+            <h2>Weekly Progress</h2>
+            <div id="weekly-chart" class="weekly-chart"></div>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-value" id="total-time">0h 0m</div>
+                    <div class="stat-label">Total Study Time</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="total-subjects">0</div>
+                    <div class="stat-label">Subjects</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-value" id="study-streak">0</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modals -->
+    <div id="subject-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3>Add New Subject</h3>
+            <form id="subject-form">
+                <div class="form-group">
+                    <label>Subject Name</label>
+                    <input type="text" id="subject-name" required>
+                </div>
+                <div class="form-group">
+                    <label>Color Theme</label>
+                    <input type="color" id="subject-color" value="#4CAF50">
+                </div>
+                <button type="submit" class="btn-primary">Add Subject</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast">
+        <span id="toast-message"></span>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
